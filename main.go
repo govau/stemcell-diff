@@ -19,7 +19,7 @@ func getStemcellInfo(thing string) (map[string]string, error) {
 		return nil, errors.New("should be format: xenial-97.18")
 	}
 
-	resp, err := http.Get(fmt.Sprintf("https://s3.amazonaws.com/bosh-aws-light-stemcells/light-bosh-stemcell-%s-aws-xen-hvm-ubuntu-%s-go_agent.tgz", parts[1], parts[0]))
+	resp, err := http.Get(fmt.Sprintf("https://s3.amazonaws.com/bosh-aws-light-stemcells/%[1]s/light-bosh-stemcell-%[1]s-aws-xen-hvm-ubuntu-%[2]s-go_agent.tgz", parts[1], parts[0]))
 	if err != nil {
 		return nil, err
 	}
